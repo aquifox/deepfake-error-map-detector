@@ -49,10 +49,11 @@ Web page image
 - Chrome 또는 Chromium 기반 브라우저
 - 학습된 모델 가중치 파일
 
-필요한 모델 파일:
+권장 모델 파일:
 
 ```text
 models/deepfake_detector_full.pth
+models/label_map.json
 ```
 
 또는 split weight 방식:
@@ -70,6 +71,23 @@ git clone https://github.com/aquifox/deepfake-error-map-detector.git
 cd deepfake-error-map-detector
 python -m pip install -r requirements.txt
 ```
+
+## 모델 가중치 다운로드
+
+코드만 clone한 뒤에도 아래 GitHub Release에서 데모 가중치를 받아 바로 실행할 수 있습니다.
+
+- Release: [v0.1.0-model](https://github.com/aquifox/deepfake-error-map-detector/releases/tag/v0.1.0-model)
+- Direct download: [deepfake_detector_full.pth](https://github.com/aquifox/deepfake-error-map-detector/releases/download/v0.1.0-model/deepfake_detector_full.pth)
+- SHA256: `a8f3f2e3a4686fb50a111882b9eb23468f962ff37c34e5dfacfe8ab63fcb20b5`
+
+Windows PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force models | Out-Null
+Invoke-WebRequest -Uri "https://github.com/aquifox/deepfake-error-map-detector/releases/download/v0.1.0-model/deepfake_detector_full.pth" -OutFile "models/deepfake_detector_full.pth"
+```
+
+브라우저로 직접 받은 경우에는 파일을 아래 위치에 두면 됩니다.
 
 ```text
 models/deepfake_detector_full.pth
@@ -130,7 +148,7 @@ python inference.py --image samples/example.jpg --weights models/deepfake_detect
 
 표시 문구:
 
-- fake probability가 높음: `딥페이크 의심`
+- fake probability가 높음: `⚠ 딥페이크 의심`
 - fake probability가 낮음: `REAL 가능성 높음`
 - 항상 `AI 분석 결과 참고용` 문구 표시
 
