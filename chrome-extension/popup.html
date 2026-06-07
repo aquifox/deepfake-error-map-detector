@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deepfake Detector</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="dfd-popup">
+    <main class="dfd-popup-panel">
+      <header class="dfd-popup-header">
+        <h1>Deepfake Detector</h1>
+        <p>localhost AI 분석 결과 참고용</p>
+      </header>
+
+      <section class="dfd-status-box" id="serverStatus">
+        서버 상태 확인 전
+      </section>
+
+      <div class="dfd-actions">
+        <button id="checkServerButton" type="button">서버 상태 확인</button>
+        <button id="analyzeButton" type="button" class="primary">
+          현재 페이지 이미지 분석
+        </button>
+      </div>
+
+      <p class="dfd-note">
+        이미지는 외부 서버가 아니라 127.0.0.1 추론 서버로만 전송됩니다.
+      </p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
