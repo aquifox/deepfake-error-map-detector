@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Deepfake Error Map Detector",
+  "version": "1.0.0",
+  "description": "Analyze page images with a local CNN AutoEncoder Error Map deepfake detector.",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Deepfake Detector"
+  },
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
