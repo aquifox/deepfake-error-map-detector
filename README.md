@@ -2,7 +2,7 @@
 
 기존에 학습한 CNN AutoEncoder Error Map 기반 딥페이크 탐지 모델을 웹페이지 이미지 분석용 Chrome 확장 프로그램으로 연결한 프로젝트입니다.
 
-이 프로젝트는 **확정 판정 도구가 아니라 참고용 AI 분석 도구**입니다. 결과를 법적 증거, 사실 확정, 인물 진위 판정으로 사용하지 마세요.
+이 프로젝트는 확정 판정 도구가 아닙니다. 결과를 법적 증거, 사실 확정, 인물 진위 판정으로 사용하지 마세요.
 
 ## 핵심 구조
 
@@ -49,8 +49,6 @@ Web page image
 - Chrome 또는 Chromium 기반 브라우저
 - 학습된 모델 가중치 파일
 
-모델 가중치는 GitHub 저장소에 직접 올리지 않는 것을 권장합니다. 용량이 크고 재학습 결과물이기 때문에 GitHub Releases, Google Drive, Hugging Face Hub 같은 별도 경로로 배포하세요.
-
 필요한 모델 파일:
 
 ```text
@@ -72,8 +70,6 @@ git clone https://github.com/aquifox/deepfake-error-map-detector.git
 cd deepfake-error-map-detector
 python -m pip install -r requirements.txt
 ```
-
-Colab에서 받은 `deepfake_detector_full.pth`를 `models/` 폴더에 넣습니다.
 
 ```text
 models/deepfake_detector_full.pth
@@ -157,7 +153,7 @@ python inference.py --image samples/example.jpg --weights models/deepfake_detect
 - 결과는 확률적 AI 판단이며 사실 확정이 아닙니다.
 - 민감한 이미지나 타인의 개인정보가 포함된 이미지는 분석 전 사용자가 직접 주의해야 합니다.
 
-## 한계
+## 기타 유의사항
 
 - 정지 이미지 기반 모델입니다. 영상의 시간적 일관성, 음성과 입 모양 불일치 등은 분석하지 못합니다.
 - 학습 데이터 분포와 다른 이미지에서는 성능이 떨어질 수 있습니다.
