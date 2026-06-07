@@ -1,0 +1,8 @@
+{
+  "real": 0,
+  "fake": 1,
+  "id_to_label": {
+    "0": "real",
+    "1": "fake"
+  }
+}
