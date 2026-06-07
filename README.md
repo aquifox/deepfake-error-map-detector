@@ -37,7 +37,7 @@ Web page image
 ├─ inference.py
 ├─ server.py
 ├─ requirements.txt
-├─ train_deepfake_detector_colab.ipynb
+├─ COLAB_TRAINING.md
 ├─ PRIVACY.md
 ├─ MODEL_ARTIFACTS.md
 └─ README.md
@@ -140,25 +140,15 @@ python inference.py --image samples/example.jpg --weights models/deepfake_detect
 
 ## Colab 재학습
 
-`train_deepfake_detector_colab.ipynb`는 Google Drive의 `Dataset.zip`을 사용해 모델을 재학습하는 노트북입니다.
+재학습 흐름은 [COLAB_TRAINING.md](COLAB_TRAINING.md)를 참고하세요.
 
-기본 경로:
+기본 데이터셋 경로:
 
 ```text
 /content/drive/MyDrive/Dataset.zip
 ```
 
-학습이 끝나면 다음 파일이 생성됩니다.
-
-```text
-ae_weights.pth
-classifier_weights.pth
-deepfake_detector_full.pth
-label_map.json
-inference.py
-```
-
-이 중 `deepfake_detector_full.pth` 또는 split weight 파일을 `models/`에 넣으면 로컬 서버와 확장 프로그램에서 사용할 수 있습니다.
+학습이 끝나면 생성되는 `deepfake_detector_full.pth` 또는 split weight 파일을 `models/`에 넣으면 로컬 서버와 확장 프로그램에서 사용할 수 있습니다.
 
 ## 정보 윤리와 개인정보 보호
 
