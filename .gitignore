@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Model artifacts: upload these to GitHub Releases or keep them local.
+*.pth
+models/*.pth
+*.pt
+*.onnx
+
+# Datasets and generated outputs
+Dataset.zip
+dataset.zip
+*.zip
+outputs/
+artifacts/
+deepfake_detector_outputs/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
